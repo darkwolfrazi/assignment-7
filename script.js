@@ -28,9 +28,43 @@ document.addEventListener("keydown", function(event) {
     console.log("You pressed the 'DownArrow Key'");
     currentSize *= 0.9;
     balloon.style.fontSize = currentSize + "%";
+    event.preventDefault();
   } else if (event.key == "ArrowUp") {
     console.log("You pressed the 'UpArrow Key'");
     currentSize *= 1.1;
     balloon.style.fontSize = currentSize + "%";
+    event.preventDefault();
   }
+});
+let tab1 = document.getElementById("tab1");
+let tab2 = document.getElementById("tab2");
+let tab3 = document.getElementById("tab3");
+function setDefaultState() {
+  tab2.style.display = "none";
+  tab3.style.display = "none";
+}
+
+setDefaultState();
+let tab1Link = document.getElementById("tab1Link");
+tab1Link.addEventListener("click", event => {
+  tab1.style.display = "block";
+  tab2.style.display = "none";
+  tab3.style.display = "none";
+  event.preventDefault();
+});
+
+let tab2Link = document.getElementById("tab2Link");
+tab2Link.addEventListener("click", event => {
+  tab2.style.display = "block";
+  tab1.style.display = "none";
+  tab3.style.display = "none";
+  event.preventDefault();
+});
+
+let tab3Link = document.getElementById("tab3Link");
+tab3Link.addEventListener("click", event => {
+  tab3.style.display = "block";
+  tab1.style.display = "none";
+  tab2.style.display = "none";
+  event.preventDefault();
 });
